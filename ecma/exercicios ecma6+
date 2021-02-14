@@ -1,0 +1,134 @@
+									/*exercicios*/
+
+
+
+			/*bloco 1*/
+function erro(err){
+    throw new Error('have a mistake')
+}
+
+try{
+    function valores(e,i){
+       return e + i 
+    }
+}catch(e){
+     erro(e)
+}finally{
+    console.log('finalizou')
+}
+
+
+console.log(valores(2,2))
+
+
+			/*bloco 2*/
+
+error = (err) =>{
+    throw 'has a mistake'
+}
+
+
+
+element = (i) =>{
+    try{
+       return i.toUpperCase() 
+    }catch(err){
+        error(err)
+    }finally{
+        console.log('finalizou')
+    }
+}
+
+console.log(element('casa'))
+
+
+
+
+		/*bloco 3*/
+
+elemento = {
+    nome:'Randy',
+    idade:12,
+    pais:'USA'
+}
+
+
+const {nome} = elemento
+console.log(nome)
+
+console.log(elemento.pais)
+elemento.idade = 22
+console.log(elemento)
+
+
+
+
+
+			/*bloco 4	*/
+
+let produtos = ['camisa polo','calça jeans','tênis nike','jaqueta de couro']
+
+function prod(nome,indice){
+    console.log(`${indice + 1}  ${nome}`)
+}
+
+produtos.forEach(prod)
+
+
+
+
+		/* bloco 5 com erro de lógica*/
+		
+/*função construtora:
+funciona como classes
+java,c#,c++ e outras linguagens OO tipadadas*/
+function production(diretor ='',novaProdutora,
+filme = ''){
+    /*atributo privado*/
+    let produtora = 'warner'
+    
+    
+    //metodo público equivalente ao metodo SET
+    this.novoEstudio = function(){
+        if( produtora !== produtora ){
+          produtora = novaProdutora
+        }else{
+          ovaProdutora = produtora 
+        }
+    }
+    
+    //metodo público equivalente ao metodo GET
+    this.getProdutora = function(){
+        return produtora
+    }
+    
+}
+
+const estudio = new production
+estudio.novoEstudio()
+console.log(estudio.getProdutora())
+
+let paramount = new production('Cristopher Nolan', 'paramount','avengers')
+paramount.novoEstudio()
+console.log(paramount.getProdutora())		
+
+
+
+
+		/* bloco 6 com*/
+
+let promessa = new Promise(function(prometido){
+    prometido(3)
+})
+promessa.then(function(e){
+  console.log(e * 3)
+})
+
+
+p = new Promise(function(pr){
+    pr(22)
+})
+p.then(e => e * 3) 
+ .then(e => e * 2)
+ .then(e => 'total ='+ e)
+ .then(e => console.log(e))
